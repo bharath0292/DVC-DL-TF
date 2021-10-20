@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: src
+Version: 0.0.1
+Summary: A small package for dvc DL temsorflow pipeline demo
+Home-page: https://github.com/bharath0292/DVC-DL-TF
+Author: bharath0292
+Author-email: bharath0292@gmail.com
+License: UNKNOWN
+Platform: UNKNOWN
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+
+UNKNOWN
+
