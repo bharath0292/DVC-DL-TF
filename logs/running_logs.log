@@ -1,0 +1,5 @@
+[2021-10-20 16:21:33,379: INFO: stage_01_load_save]: stage 01 started
+[2021-10-20 16:21:33,381: INFO: all_utils]: yaml file config/config.yaml loaded successfully
+[2021-10-20 16:21:33,411: INFO: all_utils]: Directory is created at data/dog
+[2021-10-20 16:21:33,820: INFO: all_utils]: Directory is created at data/cat
+[2021-10-20 16:21:34,138: INFO: stage_01_load_save]: stage 01 completed and all the data are saved in local
