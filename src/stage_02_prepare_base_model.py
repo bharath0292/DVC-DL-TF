@@ -1,11 +1,10 @@
 from genericpath import exists
 from src.utils.all_utils import read_yaml,create_directory
-from src.utils.models import get_VGG_16_model
+from src.utils.models import get_VGG_16_model, prepare_model
 import argparse
 import os
-import shutil
-from tqdm import tqdm
 import logging
+import io
 
 logging_str="[%(asctime)s: %(levelname)s: %(module)s]: %(message)s"
 log_dir="logs"
@@ -15,7 +14,7 @@ logging.basicConfig(filename=filename, level=logging.INFO, format=logging_str, f
 
 def prepare_base_model(config_path, params_path):
     config=read_yaml(config_path)
-    params_path=read_yaml(params_path)
+    params=read_yaml(params_path)
 
     artifacts= config["artifacts"]
     artifacts_dir=artifacts["ARTIFACTS_DIR"]
@@ -28,7 +27,32 @@ def prepare_base_model(config_path, params_path):
 
     base_model_path=os.path.join(base_model_dir,base_model_name)
 
-    model= get_VGG_16_model(input_shape=params_path["IMAGE_SIZE"],modelpath=base_model_path)
+    model= get_VGG_16_model(input_shape=params["IMAGE_SIZE"],model_path=base_model_path)
+
+    full_model=prepare_model(
+        model,
+        classes=params["CLASSES"],
+        freeze_all=False,
+        freeze_till=2,
+        learning_rate=params["LEARNING_RATE"]
+    )
+
+    update_base_model_path= os.path.join(base_model_dir,artifacts["UPDATED_BASE_MODEL_NAME"])
+
+    def _log_model_summary(model):
+        with io.StringIO() as stream:
+            model.summary(print_fn=lambda x: stream.write(f"{x}\n"))
+            summary_str=stream.getvalue()
+
+        return summary_str
+
+
+    logging.info(f"full model summary: \n{_log_model_summary(full_model)}")
+
+    full_model.save(update_base_model_path)
+
+
+
 
 if __name__=='__main__':
     args=argparse.ArgumentParser()
@@ -41,7 +65,7 @@ if __name__=='__main__':
     try:
         logging.info(">>>> stage 02 started")
 
-        prepare_base_model(config_path==parsed_args.config, params_path=parsed_args.params)
+        prepare_base_model(config_path=parsed_args.config, params_path=parsed_args.params)
 
         logging.info("stage 02 completed and base model has created >>>>")
 

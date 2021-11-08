@@ -3,3 +3,214 @@
 [2021-10-20 16:21:33,411: INFO: all_utils]: Directory is created at data/dog
 [2021-10-20 16:21:33,820: INFO: all_utils]: Directory is created at data/cat
 [2021-10-20 16:21:34,138: INFO: stage_01_load_save]: stage 01 completed and all the data are saved in local
+[2021-11-08 10:22:45,160: INFO: stage_02_prepare_base_model]: >>>> stage 02 started
+[2021-11-08 10:22:45,170: INFO: all_utils]: yaml file config/config.yaml loaded successfully
+[2021-11-08 10:22:45,175: INFO: all_utils]: yaml file params.yaml loaded successfully
+[2021-11-08 10:22:45,176: INFO: all_utils]: Directory is created at base_model
+[2021-11-08 10:22:45,176: ERROR: stage_02_prepare_base_model]: get_VGG_16_model() got an unexpected keyword argument 'modelpath'
+Traceback (most recent call last):
+  File "src/stage_02_prepare_base_model.py", line 59, in <module>
+    prepare_base_model(config_path=parsed_args.config, params_path=parsed_args.params)
+  File "src/stage_02_prepare_base_model.py", line 31, in prepare_base_model
+    model= get_VGG_16_model(input_shape=params["IMAGE_SIZE"],modelpath=base_model_path)
+TypeError: get_VGG_16_model() got an unexpected keyword argument 'modelpath'
+[2021-11-08 10:24:05,730: INFO: stage_02_prepare_base_model]: >>>> stage 02 started
+[2021-11-08 10:24:05,733: INFO: all_utils]: yaml file config/config.yaml loaded successfully
+[2021-11-08 10:24:05,735: INFO: all_utils]: yaml file params.yaml loaded successfully
+[2021-11-08 10:24:05,735: INFO: all_utils]: Directory is created at base_model
+[2021-11-08 10:24:22,336: WARNING: saving_utils]: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.
+[2021-11-08 10:24:22,627: INFO: models]: VGG16 base model saved at: base_model\VGG16_base_model.h5
+[2021-11-08 10:24:22,693: ERROR: stage_02_prepare_base_model]: Invalid keyword argument(s) in `compile`: {'optimize'}
+Traceback (most recent call last):
+  File "src/stage_02_prepare_base_model.py", line 59, in <module>
+    prepare_base_model(config_path=parsed_args.config, params_path=parsed_args.params)
+  File "src/stage_02_prepare_base_model.py", line 38, in prepare_base_model
+    learning_rate=params["LEARNING_RATE"]
+  File "c:\users\bharath thanumalayan\desktop\mlops\dvc\03.dl-dvc\src\utils\models.py", line 40, in prepare_model
+    metrics=["accuracy"]
+  File "C:\Users\Bharath Thanumalayan\Desktop\MLOPS\DVC\03.DL-DVC\env\lib\site-packages\keras\engine\training.py", line 555, in compile
+    self._validate_compile(optimizer, metrics, **kwargs)
+  File "C:\Users\Bharath Thanumalayan\Desktop\MLOPS\DVC\03.DL-DVC\env\lib\site-packages\keras\engine\training.py", line 2718, in _validate_compile
+    (invalid_kwargs,))
+TypeError: Invalid keyword argument(s) in `compile`: {'optimize'}
+[2021-11-08 10:25:14,752: INFO: stage_02_prepare_base_model]: >>>> stage 02 started
+[2021-11-08 10:25:14,755: INFO: all_utils]: yaml file config/config.yaml loaded successfully
+[2021-11-08 10:25:14,756: INFO: all_utils]: yaml file params.yaml loaded successfully
+[2021-11-08 10:25:14,757: INFO: all_utils]: Directory is created at base_model
+[2021-11-08 10:25:15,767: WARNING: saving_utils]: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.
+[2021-11-08 10:25:15,873: INFO: models]: VGG16 base model saved at: base_model\VGG16_base_model.h5
+[2021-11-08 10:25:15,954: INFO: models]: custom model is compiled and ready to be trained
+[2021-11-08 10:25:16,037: INFO: stage_02_prepare_base_model]: None
+[2021-11-08 10:25:16,038: WARNING: saving_utils]: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.
+[2021-11-08 10:25:16,170: INFO: stage_02_prepare_base_model]: stage 02 completed and base model has created >>>>
+[2021-11-08 17:57:51,144: INFO: stage_02_prepare_base_model]: >>>> stage 02 started
+[2021-11-08 17:57:51,149: INFO: all_utils]: yaml file config/config.yaml loaded successfully
+[2021-11-08 17:57:51,152: INFO: all_utils]: yaml file params.yaml loaded successfully
+[2021-11-08 17:57:51,152: INFO: all_utils]: Directory is created at base_model
+[2021-11-08 17:58:03,755: WARNING: saving_utils]: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.
+[2021-11-08 17:58:04,165: INFO: models]: VGG16 base model saved at: base_model\VGG16_base_model.h5
+[2021-11-08 17:58:04,258: INFO: models]: custom model is compiled and ready to be trained
+[2021-11-08 17:58:04,266: INFO: stage_02_prepare_base_model]: full model summary: 
+Model: "vgg16"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+input_1 (InputLayer)         [(None, 224, 224, 3)]     0         
+_________________________________________________________________
+block1_conv1 (Conv2D)        (None, 224, 224, 64)      1792      
+_________________________________________________________________
+block1_conv2 (Conv2D)        (None, 224, 224, 64)      36928     
+_________________________________________________________________
+block1_pool (MaxPooling2D)   (None, 112, 112, 64)      0         
+_________________________________________________________________
+block2_conv1 (Conv2D)        (None, 112, 112, 128)     73856     
+_________________________________________________________________
+block2_conv2 (Conv2D)        (None, 112, 112, 128)     147584    
+_________________________________________________________________
+block2_pool (MaxPooling2D)   (None, 56, 56, 128)       0         
+_________________________________________________________________
+block3_conv1 (Conv2D)        (None, 56, 56, 256)       295168    
+_________________________________________________________________
+block3_conv2 (Conv2D)        (None, 56, 56, 256)       590080    
+_________________________________________________________________
+block3_conv3 (Conv2D)        (None, 56, 56, 256)       590080    
+_________________________________________________________________
+block3_pool (MaxPooling2D)   (None, 28, 28, 256)       0         
+_________________________________________________________________
+block4_conv1 (Conv2D)        (None, 28, 28, 512)       1180160   
+_________________________________________________________________
+block4_conv2 (Conv2D)        (None, 28, 28, 512)       2359808   
+_________________________________________________________________
+block4_conv3 (Conv2D)        (None, 28, 28, 512)       2359808   
+_________________________________________________________________
+block4_pool (MaxPooling2D)   (None, 14, 14, 512)       0         
+_________________________________________________________________
+block5_conv1 (Conv2D)        (None, 14, 14, 512)       2359808   
+_________________________________________________________________
+block5_conv2 (Conv2D)        (None, 14, 14, 512)       2359808   
+_________________________________________________________________
+block5_conv3 (Conv2D)        (None, 14, 14, 512)       2359808   
+_________________________________________________________________
+block5_pool (MaxPooling2D)   (None, 7, 7, 512)         0         
+=================================================================
+Total params: 14,714,688
+Trainable params: 0
+Non-trainable params: 14,714,688
+_________________________________________________________________
+
+[2021-11-08 17:58:04,266: WARNING: saving_utils]: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.
+[2021-11-08 17:58:04,399: INFO: stage_02_prepare_base_model]: stage 02 completed and base model has created >>>>
+[2021-11-08 17:59:04,575: INFO: stage_02_prepare_base_model]: >>>> stage 02 started
+[2021-11-08 17:59:04,577: INFO: all_utils]: yaml file config/config.yaml loaded successfully
+[2021-11-08 17:59:04,581: INFO: all_utils]: yaml file params.yaml loaded successfully
+[2021-11-08 17:59:04,582: INFO: all_utils]: Directory is created at base_model
+[2021-11-08 17:59:05,933: WARNING: saving_utils]: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.
+[2021-11-08 17:59:06,047: INFO: models]: VGG16 base model saved at: base_model\VGG16_base_model.h5
+[2021-11-08 17:59:06,070: INFO: models]: custom model is compiled and ready to be trained
+[2021-11-08 17:59:06,073: INFO: stage_02_prepare_base_model]: full model summary: 
+Model: "vgg16"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+input_1 (InputLayer)         [(None, 224, 224, 3)]     0         
+_________________________________________________________________
+block1_conv1 (Conv2D)        (None, 224, 224, 64)      1792      
+_________________________________________________________________
+block1_conv2 (Conv2D)        (None, 224, 224, 64)      36928     
+_________________________________________________________________
+block1_pool (MaxPooling2D)   (None, 112, 112, 64)      0         
+_________________________________________________________________
+block2_conv1 (Conv2D)        (None, 112, 112, 128)     73856     
+_________________________________________________________________
+block2_conv2 (Conv2D)        (None, 112, 112, 128)     147584    
+_________________________________________________________________
+block2_pool (MaxPooling2D)   (None, 56, 56, 128)       0         
+_________________________________________________________________
+block3_conv1 (Conv2D)        (None, 56, 56, 256)       295168    
+_________________________________________________________________
+block3_conv2 (Conv2D)        (None, 56, 56, 256)       590080    
+_________________________________________________________________
+block3_conv3 (Conv2D)        (None, 56, 56, 256)       590080    
+_________________________________________________________________
+block3_pool (MaxPooling2D)   (None, 28, 28, 256)       0         
+_________________________________________________________________
+block4_conv1 (Conv2D)        (None, 28, 28, 512)       1180160   
+_________________________________________________________________
+block4_conv2 (Conv2D)        (None, 28, 28, 512)       2359808   
+_________________________________________________________________
+block4_conv3 (Conv2D)        (None, 28, 28, 512)       2359808   
+_________________________________________________________________
+block4_pool (MaxPooling2D)   (None, 14, 14, 512)       0         
+_________________________________________________________________
+block5_conv1 (Conv2D)        (None, 14, 14, 512)       2359808   
+_________________________________________________________________
+block5_conv2 (Conv2D)        (None, 14, 14, 512)       2359808   
+_________________________________________________________________
+block5_conv3 (Conv2D)        (None, 14, 14, 512)       2359808   
+_________________________________________________________________
+block5_pool (MaxPooling2D)   (None, 7, 7, 512)         0         
+=================================================================
+Total params: 14,714,688
+Trainable params: 0
+Non-trainable params: 14,714,688
+_________________________________________________________________
+
+[2021-11-08 17:59:06,073: WARNING: saving_utils]: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.
+[2021-11-08 17:59:06,185: INFO: stage_02_prepare_base_model]: stage 02 completed and base model has created >>>>
+[2021-11-08 18:04:41,346: INFO: stage_02_prepare_base_model]: >>>> stage 02 started
+[2021-11-08 18:04:41,348: INFO: all_utils]: yaml file config/config.yaml loaded successfully
+[2021-11-08 18:04:41,350: INFO: all_utils]: yaml file params.yaml loaded successfully
+[2021-11-08 18:04:41,350: INFO: all_utils]: Directory is created at base_model
+[2021-11-08 18:04:42,365: WARNING: saving_utils]: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.
+[2021-11-08 18:04:42,468: INFO: models]: VGG16 base model saved at: base_model\VGG16_base_model.h5
+[2021-11-08 18:04:42,489: INFO: models]: custom model is compiled and ready to be trained
+[2021-11-08 18:04:42,492: INFO: stage_02_prepare_base_model]: full model summary: 
+Model: "vgg16"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+input_1 (InputLayer)         [(None, 224, 224, 3)]     0         
+_________________________________________________________________
+block1_conv1 (Conv2D)        (None, 224, 224, 64)      1792      
+_________________________________________________________________
+block1_conv2 (Conv2D)        (None, 224, 224, 64)      36928     
+_________________________________________________________________
+block1_pool (MaxPooling2D)   (None, 112, 112, 64)      0         
+_________________________________________________________________
+block2_conv1 (Conv2D)        (None, 112, 112, 128)     73856     
+_________________________________________________________________
+block2_conv2 (Conv2D)        (None, 112, 112, 128)     147584    
+_________________________________________________________________
+block2_pool (MaxPooling2D)   (None, 56, 56, 128)       0         
+_________________________________________________________________
+block3_conv1 (Conv2D)        (None, 56, 56, 256)       295168    
+_________________________________________________________________
+block3_conv2 (Conv2D)        (None, 56, 56, 256)       590080    
+_________________________________________________________________
+block3_conv3 (Conv2D)        (None, 56, 56, 256)       590080    
+_________________________________________________________________
+block3_pool (MaxPooling2D)   (None, 28, 28, 256)       0         
+_________________________________________________________________
+block4_conv1 (Conv2D)        (None, 28, 28, 512)       1180160   
+_________________________________________________________________
+block4_conv2 (Conv2D)        (None, 28, 28, 512)       2359808   
+_________________________________________________________________
+block4_conv3 (Conv2D)        (None, 28, 28, 512)       2359808   
+_________________________________________________________________
+block4_pool (MaxPooling2D)   (None, 14, 14, 512)       0         
+_________________________________________________________________
+block5_conv1 (Conv2D)        (None, 14, 14, 512)       2359808   
+_________________________________________________________________
+block5_conv2 (Conv2D)        (None, 14, 14, 512)       2359808   
+_________________________________________________________________
+block5_conv3 (Conv2D)        (None, 14, 14, 512)       2359808   
+_________________________________________________________________
+block5_pool (MaxPooling2D)   (None, 7, 7, 512)         0         
+=================================================================
+Total params: 14,714,688
+Trainable params: 14,712,896
+Non-trainable params: 1,792
+_________________________________________________________________
+
+[2021-11-08 18:04:42,492: WARNING: saving_utils]: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.
+[2021-11-08 18:04:42,590: INFO: stage_02_prepare_base_model]: stage 02 completed and base model has created >>>>
