@@ -23,9 +23,9 @@ def prepare_base_model(config_path, params_path):
     base_model_name=artifacts["BASE_MODEL_NAME"]
 
     base_model_dir_path=os.path.join(artifacts_dir,base_model_dir)
-    create_directory([base_model_dir])
+    create_directory([base_model_dir_path])
 
-    base_model_path=os.path.join(base_model_dir,base_model_name)
+    base_model_path=os.path.join(base_model_dir_path,base_model_name)
 
     model= get_VGG_16_model(input_shape=params["IMAGE_SIZE"],model_path=base_model_path)
 
@@ -37,7 +37,7 @@ def prepare_base_model(config_path, params_path):
         learning_rate=params["LEARNING_RATE"]
     )
 
-    update_base_model_path= os.path.join(base_model_dir,artifacts["UPDATED_BASE_MODEL_NAME"])
+    update_base_model_path= os.path.join(base_model_dir_path,artifacts["UPDATED_BASE_MODEL_NAME"])
 
     def _log_model_summary(model):
         with io.StringIO() as stream:
