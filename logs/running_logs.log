@@ -824,3 +824,58 @@ Non-trainable params: 14,714,688
 _________________________________________________________________
 
 [2021-11-09 15:59:39,670: INFO: stage_02_prepare_base_model]: stage 02 completed and base model has created >>>>
+[2021-11-09 16:10:36,680: INFO: stage_03_prepare_callbacks]: >>>> stage 03 started
+[2021-11-09 16:10:36,680: INFO: all_utils]: yaml file config/config.yaml loaded successfully
+[2021-11-09 16:10:36,680: INFO: all_utils]: yaml file params.yaml loaded successfully
+[2021-11-09 16:10:36,680: INFO: all_utils]: Directory is created at artifacts\tensorboard_log_dir
+[2021-11-09 16:10:36,680: INFO: all_utils]: Directory is created at artifacts\checkpoints
+[2021-11-09 16:10:36,680: INFO: all_utils]: Directory is created at artifacts\callbacks
+[2021-11-09 16:10:37,198: ERROR: stage_03_prepare_callbacks]: module 'keras.api._v2.keras.callbacks' has no attribute 'Tensorboard'
+Traceback (most recent call last):
+  File "src/stage_03_prepare_callbacks.py", line 45, in <module>
+    prepare_callbacks(config_path=parsed_args.config, params_path=parsed_args.params)
+  File "src/stage_03_prepare_callbacks.py", line 29, in prepare_callbacks
+    create_and_save_tensorboard_callback(callbacks_dir,tensorboard_log_dir)
+  File "c:\users\bharath thanumalayan\desktop\mlops\dvc\03.dl-dvc\src\utils\callbacks.py", line 13, in create_and_save_tensorboard_callback
+    tensorboard_callback = tf.keras.callbacks.Tensorboard(log_dir=tb_running_log_dir)
+AttributeError: module 'keras.api._v2.keras.callbacks' has no attribute 'Tensorboard'
+[2021-11-09 16:13:16,807: INFO: stage_03_prepare_callbacks]: >>>> stage 03 started
+[2021-11-09 16:13:16,807: INFO: all_utils]: yaml file config/config.yaml loaded successfully
+[2021-11-09 16:13:16,807: INFO: all_utils]: yaml file params.yaml loaded successfully
+[2021-11-09 16:13:16,807: INFO: all_utils]: Directory is created at artifacts\tensorboard_log_dir
+[2021-11-09 16:13:16,807: INFO: all_utils]: Directory is created at artifacts\checkpoints
+[2021-11-09 16:13:16,807: INFO: all_utils]: Directory is created at artifacts\callbacks
+[2021-11-09 16:13:17,443: ERROR: stage_03_prepare_callbacks]: module 'ntpath' has no attribute 'joins'
+Traceback (most recent call last):
+  File "src/stage_03_prepare_callbacks.py", line 45, in <module>
+    prepare_callbacks(config_path=parsed_args.config, params_path=parsed_args.params)
+  File "src/stage_03_prepare_callbacks.py", line 29, in prepare_callbacks
+    create_and_save_tensorboard_callback(callbacks_dir,tensorboard_log_dir)
+  File "c:\users\bharath thanumalayan\desktop\mlops\dvc\03.dl-dvc\src\utils\callbacks.py", line 15, in create_and_save_tensorboard_callback
+    tb_callback_filepath = os.path.joins(callbacks_dir, "tensorboard_cb.cb")
+AttributeError: module 'ntpath' has no attribute 'joins'
+[2021-11-09 16:14:05,877: INFO: stage_03_prepare_callbacks]: >>>> stage 03 started
+[2021-11-09 16:14:05,877: INFO: all_utils]: yaml file config/config.yaml loaded successfully
+[2021-11-09 16:14:05,877: INFO: all_utils]: yaml file params.yaml loaded successfully
+[2021-11-09 16:14:05,877: INFO: all_utils]: Directory is created at artifacts\tensorboard_log_dir
+[2021-11-09 16:14:05,877: INFO: all_utils]: Directory is created at artifacts\checkpoints
+[2021-11-09 16:14:05,877: INFO: all_utils]: Directory is created at artifacts\callbacks
+[2021-11-09 16:14:06,326: INFO: callbacks]: Tensorboard callback is being saved at artifacts\callbacks\tensorboard_cb.cb
+[2021-11-09 16:14:06,327: ERROR: stage_03_prepare_callbacks]: module 'ntpath' has no attribute 'joins'
+Traceback (most recent call last):
+  File "src/stage_03_prepare_callbacks.py", line 45, in <module>
+    prepare_callbacks(config_path=parsed_args.config, params_path=parsed_args.params)
+  File "src/stage_03_prepare_callbacks.py", line 30, in prepare_callbacks
+    create_and_save_checkpoint_callback(checkpoint_dir,tensorboard_log_dir)
+  File "c:\users\bharath thanumalayan\desktop\mlops\dvc\03.dl-dvc\src\utils\callbacks.py", line 30, in create_and_save_checkpoint_callback
+    ckpt_callback_filepath = os.path.joins(checkpoint_dir, "checkpoint_cb.cb")
+AttributeError: module 'ntpath' has no attribute 'joins'
+[2021-11-09 16:14:25,030: INFO: stage_03_prepare_callbacks]: >>>> stage 03 started
+[2021-11-09 16:14:25,030: INFO: all_utils]: yaml file config/config.yaml loaded successfully
+[2021-11-09 16:14:25,030: INFO: all_utils]: yaml file params.yaml loaded successfully
+[2021-11-09 16:14:25,030: INFO: all_utils]: Directory is created at artifacts\tensorboard_log_dir
+[2021-11-09 16:14:25,030: INFO: all_utils]: Directory is created at artifacts\checkpoints
+[2021-11-09 16:14:25,030: INFO: all_utils]: Directory is created at artifacts\callbacks
+[2021-11-09 16:14:25,467: INFO: callbacks]: Tensorboard callback is being saved at artifacts\callbacks\tensorboard_cb.cb
+[2021-11-09 16:14:25,473: INFO: callbacks]: Tensorboard callback is being saved at artifacts\checkpoints\checkpoint_cb.cb
+[2021-11-09 16:14:25,473: INFO: stage_03_prepare_callbacks]: stage 03 completed and callbacks are prepared and saved as binary >>>>
