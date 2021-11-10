@@ -985,3 +985,16 @@ ImportError: Image transformations require SciPy. Install SciPy.
 [2021-11-10 19:00:43,171: INFO: data_management]: train and valid generator is created
 [2021-11-10 19:03:54,813: INFO: stage_04_train]: stage 04 completed and training is completed and model saved >>>> 
 
+[2021-11-10 19:53:46,587: INFO: stage_04_train]: >>>> stage 04 started
+[2021-11-10 19:53:46,590: INFO: all_utils]: yaml file config/config.yaml loaded successfully
+[2021-11-10 19:53:46,592: INFO: all_utils]: yaml file params.yaml loaded successfully
+[2021-11-10 19:53:46,592: INFO: all_utils]: Directory is created at artifacts\model
+[2021-11-10 19:53:47,634: INFO: models]: untrained model is read from: artifacts\base_model\updated_VGG16_base_model.h5
+[2021-11-10 19:53:47,635: INFO: callbacks]: saved callbacks are loaded from artifacts\callbacks
+[2021-11-10 19:53:47,746: INFO: data_management]: data augmentation is used for training
+[2021-11-10 19:53:47,857: INFO: data_management]: train and valid generator is created
+[2021-11-10 19:57:30,546: INFO: stage_04_train]: training complete
+[2021-11-10 19:57:30,547: INFO: all_utils]: Directory is created at artifacts\model
+[2021-11-10 19:57:31,131: INFO: stage_04_train]: trained model is saved at: artifacts\model\model_at_Wed_Nov_10_19_57_30_2021_.h5
+[2021-11-10 19:57:31,131: INFO: stage_04_train]: stage 04 completed and training is completed and model saved >>>> 
+
