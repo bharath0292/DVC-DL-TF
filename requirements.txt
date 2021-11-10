@@ -112,6 +112,6 @@ yarl==1.7.0
 zc.lockfile==2.0
 zipp==3.6.0
 joblib
-
+scipy==1.7.1
 #local files installation
 -e .
