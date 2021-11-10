@@ -940,3 +940,48 @@ ValueError: Invalid subset name: train;expected "training" or "validation"
 [2021-11-10 10:11:09,023: INFO: data_management]: train and valid generator is created
 [2021-11-10 10:11:09,023: INFO: stage_04_train]: stage 04 completed and training is completed and model saved >>>> 
 
+[2021-11-10 18:57:27,392: INFO: stage_04_train]: >>>> stage 04 started
+[2021-11-10 18:57:27,416: INFO: all_utils]: yaml file config/config.yaml loaded successfully
+[2021-11-10 18:57:27,431: INFO: all_utils]: yaml file params.yaml loaded successfully
+[2021-11-10 18:57:27,433: INFO: all_utils]: Directory is created at artifacts\model
+[2021-11-10 18:57:35,479: INFO: models]: untrained model is read from: artifacts\base_model\updated_VGG16_base_model.h5
+[2021-11-10 18:57:35,528: INFO: callbacks]: saved callbacks are loaded from artifacts\callbacks
+[2021-11-10 18:57:35,647: INFO: data_management]: data augmentation is used for training
+[2021-11-10 18:57:36,437: INFO: data_management]: train and valid generator is created
+[2021-11-10 18:58:00,041: ERROR: stage_04_train]: Image transformations require SciPy. Install SciPy.
+Traceback (most recent call last):
+  File "src/stage_04_train.py", line 65, in <module>
+    train_model(config_path=parsed_args.config, params_path=parsed_args.params)
+  File "src/stage_04_train.py", line 51, in train_model
+    callbacks = callbacks
+  File "C:\Users\Bharath Thanumalayan\Desktop\MLOPS\DVC\03.DL-DVC\env\lib\site-packages\keras\engine\training.py", line 1148, in fit
+    steps_per_execution=self._steps_per_execution)
+  File "C:\Users\Bharath Thanumalayan\Desktop\MLOPS\DVC\03.DL-DVC\env\lib\site-packages\keras\engine\data_adapter.py", line 1383, in get_data_handler
+    return DataHandler(*args, **kwargs)
+  File "C:\Users\Bharath Thanumalayan\Desktop\MLOPS\DVC\03.DL-DVC\env\lib\site-packages\keras\engine\data_adapter.py", line 1150, in __init__
+    model=model)
+  File "C:\Users\Bharath Thanumalayan\Desktop\MLOPS\DVC\03.DL-DVC\env\lib\site-packages\keras\engine\data_adapter.py", line 924, in __init__
+    **kwargs)
+  File "C:\Users\Bharath Thanumalayan\Desktop\MLOPS\DVC\03.DL-DVC\env\lib\site-packages\keras\engine\data_adapter.py", line 794, in __init__
+    peek, x = self._peek_and_restore(x)
+  File "C:\Users\Bharath Thanumalayan\Desktop\MLOPS\DVC\03.DL-DVC\env\lib\site-packages\keras\engine\data_adapter.py", line 928, in _peek_and_restore
+    return x[0], x
+  File "C:\Users\Bharath Thanumalayan\Desktop\MLOPS\DVC\03.DL-DVC\env\lib\site-packages\keras_preprocessing\image\iterator.py", line 65, in __getitem__
+    return self._get_batches_of_transformed_samples(index_array)
+  File "C:\Users\Bharath Thanumalayan\Desktop\MLOPS\DVC\03.DL-DVC\env\lib\site-packages\keras_preprocessing\image\iterator.py", line 238, in _get_batches_of_transformed_samples
+    x = self.image_data_generator.apply_transform(x, params)
+  File "C:\Users\Bharath Thanumalayan\Desktop\MLOPS\DVC\03.DL-DVC\env\lib\site-packages\keras_preprocessing\image\image_data_generator.py", line 874, in apply_transform
+    order=self.interpolation_order)
+  File "C:\Users\Bharath Thanumalayan\Desktop\MLOPS\DVC\03.DL-DVC\env\lib\site-packages\keras_preprocessing\image\affine_transformations.py", line 281, in apply_affine_transform
+    raise ImportError('Image transformations require SciPy. '
+ImportError: Image transformations require SciPy. Install SciPy.
+[2021-11-10 19:00:41,836: INFO: stage_04_train]: >>>> stage 04 started
+[2021-11-10 19:00:41,840: INFO: all_utils]: yaml file config/config.yaml loaded successfully
+[2021-11-10 19:00:41,842: INFO: all_utils]: yaml file params.yaml loaded successfully
+[2021-11-10 19:00:41,842: INFO: all_utils]: Directory is created at artifacts\model
+[2021-11-10 19:00:42,955: INFO: models]: untrained model is read from: artifacts\base_model\updated_VGG16_base_model.h5
+[2021-11-10 19:00:42,956: INFO: callbacks]: saved callbacks are loaded from artifacts\callbacks
+[2021-11-10 19:00:43,061: INFO: data_management]: data augmentation is used for training
+[2021-11-10 19:00:43,171: INFO: data_management]: train and valid generator is created
+[2021-11-10 19:03:54,813: INFO: stage_04_train]: stage 04 completed and training is completed and model saved >>>> 
+
