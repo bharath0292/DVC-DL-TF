@@ -1123,3 +1123,30 @@ Non-trainable params: 14,714,688
 _________________________________________________________________
 
 [2021-11-10 20:56:21,109: INFO: stage_02_prepare_base_model]: stage 02 completed and base model has created >>>>
+[2021-11-10 21:03:25,773: INFO: stage_03_prepare_callbacks]: >>>> stage 03 started
+[2021-11-10 21:03:25,779: INFO: all_utils]: yaml file config/config.yaml loaded successfully
+[2021-11-10 21:03:25,782: INFO: all_utils]: yaml file params.yaml loaded successfully
+[2021-11-10 21:03:25,783: INFO: all_utils]: Directory is created at artifacts\tensorboard_log_dir
+[2021-11-10 21:03:25,783: INFO: all_utils]: Directory is created at artifacts\checkpoints
+[2021-11-10 21:03:25,784: INFO: all_utils]: Directory is created at artifacts\callbacks
+[2021-11-10 21:03:26,391: INFO: callbacks]: Tensorboard callback is being saved at artifacts\callbacks\tensorboard_cb.cb
+[2021-11-10 21:03:26,398: INFO: callbacks]: Tensorboard callback is being saved at artifacts\checkpoints\checkpoint_cb.cb
+[2021-11-10 21:03:26,398: INFO: stage_03_prepare_callbacks]: stage 03 completed and callbacks are prepared and saved as binary >>>>
+[2021-11-10 21:03:47,972: INFO: stage_03_prepare_callbacks]: >>>> stage 03 started
+[2021-11-10 21:03:47,975: INFO: all_utils]: yaml file config/config.yaml loaded successfully
+[2021-11-10 21:03:47,977: INFO: all_utils]: yaml file params.yaml loaded successfully
+[2021-11-10 21:03:47,977: INFO: all_utils]: Directory is created at artifacts\tensorboard_log_dir
+[2021-11-10 21:03:47,977: INFO: all_utils]: Directory is created at artifacts\checkpoints
+[2021-11-10 21:03:47,978: INFO: all_utils]: Directory is created at artifacts\callbacks
+[2021-11-10 21:03:48,498: INFO: callbacks]: Tensorboard callback is being saved at artifacts\callbacks\tensorboard_cb.cb
+[2021-11-10 21:03:48,503: INFO: callbacks]: Tensorboard callback is being saved at artifacts\checkpoints\checkpoint_cb.cb
+[2021-11-10 21:03:48,503: INFO: stage_03_prepare_callbacks]: stage 03 completed and callbacks are prepared and saved as binary >>>>
+[2021-11-10 21:04:10,833: INFO: stage_03_prepare_callbacks]: >>>> stage 03 started
+[2021-11-10 21:04:10,836: INFO: all_utils]: yaml file config/config.yaml loaded successfully
+[2021-11-10 21:04:10,838: INFO: all_utils]: yaml file params.yaml loaded successfully
+[2021-11-10 21:04:10,838: INFO: all_utils]: Directory is created at artifacts\tensorboard_log_dir
+[2021-11-10 21:04:10,839: INFO: all_utils]: Directory is created at artifacts\checkpoints
+[2021-11-10 21:04:10,839: INFO: all_utils]: Directory is created at artifacts\callbacks
+[2021-11-10 21:04:11,369: INFO: callbacks]: Tensorboard callback is being saved at artifacts\callbacks\tensorboard_cb.cb
+[2021-11-10 21:04:11,374: INFO: callbacks]: Tensorboard callback is being saved at artifacts\checkpoints\checkpoint_cb.cb
+[2021-11-10 21:04:11,374: INFO: stage_03_prepare_callbacks]: stage 03 completed and callbacks are prepared and saved as binary >>>>
