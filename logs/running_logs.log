@@ -879,3 +879,17 @@ AttributeError: module 'ntpath' has no attribute 'joins'
 [2021-11-09 16:14:25,467: INFO: callbacks]: Tensorboard callback is being saved at artifacts\callbacks\tensorboard_cb.cb
 [2021-11-09 16:14:25,473: INFO: callbacks]: Tensorboard callback is being saved at artifacts\checkpoints\checkpoint_cb.cb
 [2021-11-09 16:14:25,473: INFO: stage_03_prepare_callbacks]: stage 03 completed and callbacks are prepared and saved as binary >>>>
+[2021-11-10 07:43:07,309: INFO: stage_04_train]: >>>> stage 04 started
+[2021-11-10 07:43:07,312: INFO: all_utils]: yaml file config/config.yaml loaded successfully
+[2021-11-10 07:43:07,314: INFO: all_utils]: yaml file params.yaml loaded successfully
+[2021-11-10 07:43:07,315: INFO: all_utils]: Directory is created at artifacts\model
+[2021-11-10 07:43:13,360: INFO: models]: untrained model is read from: artifacts\base_model\updated_VGG16_base_model.h5
+[2021-11-10 07:43:13,424: INFO: stage_04_train]: stage 04 completed and training is completed and model saved >>>>
+[2021-11-10 07:45:28,130: INFO: stage_04_train]: >>>> stage 04 started
+[2021-11-10 07:45:28,133: INFO: all_utils]: yaml file config/config.yaml loaded successfully
+[2021-11-10 07:45:28,134: INFO: all_utils]: yaml file params.yaml loaded successfully
+[2021-11-10 07:45:28,135: INFO: all_utils]: Directory is created at artifacts\model
+[2021-11-10 07:45:29,105: INFO: models]: untrained model is read from: artifacts\base_model\updated_VGG16_base_model.h5
+[2021-11-10 07:45:29,106: INFO: callbacks]: saved callbacks are loaded from artifacts\callbacks
+[2021-11-10 07:45:29,107: INFO: stage_04_train]: stage 04 completed and training is completed and model saved >>>> 
+
