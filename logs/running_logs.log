@@ -893,3 +893,50 @@ AttributeError: module 'ntpath' has no attribute 'joins'
 [2021-11-10 07:45:29,106: INFO: callbacks]: saved callbacks are loaded from artifacts\callbacks
 [2021-11-10 07:45:29,107: INFO: stage_04_train]: stage 04 completed and training is completed and model saved >>>> 
 
+[2021-11-10 10:08:00,571: INFO: stage_04_train]: >>>> stage 04 started
+[2021-11-10 10:08:00,596: INFO: all_utils]: yaml file config/config.yaml loaded successfully
+[2021-11-10 10:08:00,601: INFO: all_utils]: yaml file params.yaml loaded successfully
+[2021-11-10 10:08:00,602: INFO: all_utils]: Directory is created at artifacts\model
+[2021-11-10 10:08:08,422: INFO: models]: untrained model is read from: artifacts\base_model\updated_VGG16_base_model.h5
+[2021-11-10 10:08:08,439: INFO: callbacks]: saved callbacks are loaded from artifacts\callbacks
+[2021-11-10 10:08:08,440: ERROR: stage_04_train]: 'DATA'
+Traceback (most recent call last):
+  File "src/stage_04_train.py", line 53, in <module>
+    train_model(config_path=parsed_args.config, params_path=parsed_args.params)
+  File "src/stage_04_train.py", line 36, in train_model
+    data_dir = artifacts["DATA"],
+KeyError: 'DATA'
+[2021-11-10 10:09:12,436: INFO: stage_04_train]: >>>> stage 04 started
+[2021-11-10 10:09:12,439: INFO: all_utils]: yaml file config/config.yaml loaded successfully
+[2021-11-10 10:09:12,441: INFO: all_utils]: yaml file params.yaml loaded successfully
+[2021-11-10 10:09:12,441: INFO: all_utils]: Directory is created at artifacts\model
+[2021-11-10 10:09:13,402: INFO: models]: untrained model is read from: artifacts\base_model\updated_VGG16_base_model.h5
+[2021-11-10 10:09:13,403: INFO: callbacks]: saved callbacks are loaded from artifacts\callbacks
+[2021-11-10 10:09:13,513: INFO: data_management]: data augmentation is used for training
+[2021-11-10 10:09:13,513: ERROR: stage_04_train]: Invalid subset name: train;expected "training" or "validation"
+Traceback (most recent call last):
+  File "src/stage_04_train.py", line 53, in <module>
+    train_model(config_path=parsed_args.config, params_path=parsed_args.params)
+  File "src/stage_04_train.py", line 39, in train_model
+    do_data_augmentation = params["AUGMENTATION"]
+  File "c:\users\bharath thanumalayan\desktop\mlops\dvc\03.dl-dvc\src\utils\data_management.py", line 45, in train_valid_generator
+    **dataflow_kwargs
+  File "C:\Users\Bharath Thanumalayan\Desktop\MLOPS\DVC\03.DL-DVC\env\lib\site-packages\keras\preprocessing\image.py", line 992, in flow_from_directory
+    interpolation=interpolation)
+  File "C:\Users\Bharath Thanumalayan\Desktop\MLOPS\DVC\03.DL-DVC\env\lib\site-packages\keras\preprocessing\image.py", line 410, in __init__
+    **kwargs)
+  File "C:\Users\Bharath Thanumalayan\Desktop\MLOPS\DVC\03.DL-DVC\env\lib\site-packages\keras_preprocessing\image\directory_iterator.py", line 102, in __init__
+    interpolation)
+  File "C:\Users\Bharath Thanumalayan\Desktop\MLOPS\DVC\03.DL-DVC\env\lib\site-packages\keras_preprocessing\image\iterator.py", line 207, in set_processing_attrs
+    'expected "training" or "validation"' % (subset,))
+ValueError: Invalid subset name: train;expected "training" or "validation"
+[2021-11-10 10:11:07,785: INFO: stage_04_train]: >>>> stage 04 started
+[2021-11-10 10:11:07,788: INFO: all_utils]: yaml file config/config.yaml loaded successfully
+[2021-11-10 10:11:07,790: INFO: all_utils]: yaml file params.yaml loaded successfully
+[2021-11-10 10:11:07,790: INFO: all_utils]: Directory is created at artifacts\model
+[2021-11-10 10:11:08,799: INFO: models]: untrained model is read from: artifacts\base_model\updated_VGG16_base_model.h5
+[2021-11-10 10:11:08,800: INFO: callbacks]: saved callbacks are loaded from artifacts\callbacks
+[2021-11-10 10:11:08,915: INFO: data_management]: data augmentation is used for training
+[2021-11-10 10:11:09,023: INFO: data_management]: train and valid generator is created
+[2021-11-10 10:11:09,023: INFO: stage_04_train]: stage 04 completed and training is completed and model saved >>>> 
+
