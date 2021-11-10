@@ -21,3 +21,35 @@ stages:
       md5: 4cd98e0169f25b4675d46cbc1b678d2d.dir
       size: 19364112
       nfiles: 174
+  prepare_base_model:
+    cmd: python src/stage_02_prepare_base_model.py --config=config/config.yaml --params=params.yaml
+    deps:
+    - path: config/config.yaml
+      md5: 8c2cafcbea6a397f0bef325d7541422f
+      size: 475
+    - path: params.yaml
+      md5: e44932f16f230506ed0d27346b8aa7bc
+      size: 127
+    - path: src/stage_02_prepare_base_model.py
+      md5: 54f97e09ec21cc2727bba33c7aba7b90
+      size: 2258
+    - path: src/utils/all_utils.py
+      md5: a5f2e61432c20430d734c03a4880804a
+      size: 991
+    - path: src/utils/models.py
+      md5: 6d964906afdb60694f773185f53639d9
+      size: 1839
+    params:
+      params.yaml:
+        IMAGE_SIZE:
+        - 224
+        - 224
+        - 3
+        LEARNING_RATE: 0.001
+    outs:
+    - path: artifacts/base_model/VGG16_base_model.h5
+      md5: 0f7ac0dee5526d1e579c035d0662258d
+      size: 58920272
+    - path: artifacts/base_model/updated_VGG16_base_model.h5
+      md5: 088de7281d887c0e40b419157510c792
+      size: 59132008

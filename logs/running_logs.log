@@ -1003,3 +1003,123 @@ ImportError: Image transformations require SciPy. Install SciPy.
 [2021-11-10 20:25:23,611: INFO: all_utils]: Directory is created at data/dog
 [2021-11-10 20:25:30,246: INFO: all_utils]: Directory is created at data/cat
 [2021-11-10 20:25:38,300: INFO: stage_01_load_save]: stage 01 completed and all the data are saved in local >>>>
+[2021-11-10 20:54:10,099: INFO: stage_02_prepare_base_model]: >>>> stage 02 started
+[2021-11-10 20:54:10,105: INFO: all_utils]: yaml file config/config.yaml loaded successfully
+[2021-11-10 20:54:10,109: INFO: all_utils]: yaml file params.yaml loaded successfully
+[2021-11-10 20:54:10,109: INFO: all_utils]: Directory is created at artifacts\base_model
+[2021-11-10 20:54:15,223: WARNING: saving_utils]: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.
+[2021-11-10 20:54:15,335: INFO: models]: VGG16 base model saved at: artifacts\base_model\VGG16_base_model.h5
+[2021-11-10 20:54:15,358: INFO: models]: custom model is compiled and ready to be trained
+[2021-11-10 20:54:15,372: INFO: stage_02_prepare_base_model]: full model summary: 
+Model: "model"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+input_1 (InputLayer)         [(None, 224, 224, 3)]     0         
+_________________________________________________________________
+block1_conv1 (Conv2D)        (None, 224, 224, 64)      1792      
+_________________________________________________________________
+block1_conv2 (Conv2D)        (None, 224, 224, 64)      36928     
+_________________________________________________________________
+block1_pool (MaxPooling2D)   (None, 112, 112, 64)      0         
+_________________________________________________________________
+block2_conv1 (Conv2D)        (None, 112, 112, 128)     73856     
+_________________________________________________________________
+block2_conv2 (Conv2D)        (None, 112, 112, 128)     147584    
+_________________________________________________________________
+block2_pool (MaxPooling2D)   (None, 56, 56, 128)       0         
+_________________________________________________________________
+block3_conv1 (Conv2D)        (None, 56, 56, 256)       295168    
+_________________________________________________________________
+block3_conv2 (Conv2D)        (None, 56, 56, 256)       590080    
+_________________________________________________________________
+block3_conv3 (Conv2D)        (None, 56, 56, 256)       590080    
+_________________________________________________________________
+block3_pool (MaxPooling2D)   (None, 28, 28, 256)       0         
+_________________________________________________________________
+block4_conv1 (Conv2D)        (None, 28, 28, 512)       1180160   
+_________________________________________________________________
+block4_conv2 (Conv2D)        (None, 28, 28, 512)       2359808   
+_________________________________________________________________
+block4_conv3 (Conv2D)        (None, 28, 28, 512)       2359808   
+_________________________________________________________________
+block4_pool (MaxPooling2D)   (None, 14, 14, 512)       0         
+_________________________________________________________________
+block5_conv1 (Conv2D)        (None, 14, 14, 512)       2359808   
+_________________________________________________________________
+block5_conv2 (Conv2D)        (None, 14, 14, 512)       2359808   
+_________________________________________________________________
+block5_conv3 (Conv2D)        (None, 14, 14, 512)       2359808   
+_________________________________________________________________
+block5_pool (MaxPooling2D)   (None, 7, 7, 512)         0         
+_________________________________________________________________
+flatten (Flatten)            (None, 25088)             0         
+_________________________________________________________________
+dense (Dense)                (None, 2)                 50178     
+=================================================================
+Total params: 14,764,866
+Trainable params: 50,178
+Non-trainable params: 14,714,688
+_________________________________________________________________
+
+[2021-11-10 20:54:15,513: INFO: stage_02_prepare_base_model]: stage 02 completed and base model has created >>>>
+[2021-11-10 20:56:19,344: INFO: stage_02_prepare_base_model]: >>>> stage 02 started
+[2021-11-10 20:56:19,349: INFO: all_utils]: yaml file config/config.yaml loaded successfully
+[2021-11-10 20:56:19,353: INFO: all_utils]: yaml file params.yaml loaded successfully
+[2021-11-10 20:56:19,353: INFO: all_utils]: Directory is created at artifacts\base_model
+[2021-11-10 20:56:20,818: WARNING: saving_utils]: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.
+[2021-11-10 20:56:20,937: INFO: models]: VGG16 base model saved at: artifacts\base_model\VGG16_base_model.h5
+[2021-11-10 20:56:20,976: INFO: models]: custom model is compiled and ready to be trained
+[2021-11-10 20:56:20,979: INFO: stage_02_prepare_base_model]: full model summary: 
+Model: "model"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+input_1 (InputLayer)         [(None, 224, 224, 3)]     0         
+_________________________________________________________________
+block1_conv1 (Conv2D)        (None, 224, 224, 64)      1792      
+_________________________________________________________________
+block1_conv2 (Conv2D)        (None, 224, 224, 64)      36928     
+_________________________________________________________________
+block1_pool (MaxPooling2D)   (None, 112, 112, 64)      0         
+_________________________________________________________________
+block2_conv1 (Conv2D)        (None, 112, 112, 128)     73856     
+_________________________________________________________________
+block2_conv2 (Conv2D)        (None, 112, 112, 128)     147584    
+_________________________________________________________________
+block2_pool (MaxPooling2D)   (None, 56, 56, 128)       0         
+_________________________________________________________________
+block3_conv1 (Conv2D)        (None, 56, 56, 256)       295168    
+_________________________________________________________________
+block3_conv2 (Conv2D)        (None, 56, 56, 256)       590080    
+_________________________________________________________________
+block3_conv3 (Conv2D)        (None, 56, 56, 256)       590080    
+_________________________________________________________________
+block3_pool (MaxPooling2D)   (None, 28, 28, 256)       0         
+_________________________________________________________________
+block4_conv1 (Conv2D)        (None, 28, 28, 512)       1180160   
+_________________________________________________________________
+block4_conv2 (Conv2D)        (None, 28, 28, 512)       2359808   
+_________________________________________________________________
+block4_conv3 (Conv2D)        (None, 28, 28, 512)       2359808   
+_________________________________________________________________
+block4_pool (MaxPooling2D)   (None, 14, 14, 512)       0         
+_________________________________________________________________
+block5_conv1 (Conv2D)        (None, 14, 14, 512)       2359808   
+_________________________________________________________________
+block5_conv2 (Conv2D)        (None, 14, 14, 512)       2359808   
+_________________________________________________________________
+block5_conv3 (Conv2D)        (None, 14, 14, 512)       2359808   
+_________________________________________________________________
+block5_pool (MaxPooling2D)   (None, 7, 7, 512)         0         
+_________________________________________________________________
+flatten (Flatten)            (None, 25088)             0         
+_________________________________________________________________
+dense (Dense)                (None, 2)                 50178     
+=================================================================
+Total params: 14,764,866
+Trainable params: 50,178
+Non-trainable params: 14,714,688
+_________________________________________________________________
+
+[2021-11-10 20:56:21,109: INFO: stage_02_prepare_base_model]: stage 02 completed and base model has created >>>>
